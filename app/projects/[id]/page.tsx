@@ -3,10 +3,16 @@ import { notFound } from 'next/navigation';
 import Image from 'next/image';
 import Link from 'next/link';
 import TechItem from '@/app/components/projects/TechItem';
-
+import { Metadata } from 'next';
+type Params = Promise<{ id: string }>;
 // Generate metadata for each project page
-export async function generateMetadata({ params }: { params: { id: string } }) {
-  const project = projects.find(p => p.id === params.id);
+export async function generateMetadata({
+  params,
+}: {
+  params: Params;
+}): Promise<Metadata> {
+  const { id } = await params;
+  const project = projects.find(p => p.id === id);
 
   if (!project) {
     return {
@@ -27,16 +33,17 @@ export function generateStaticParams() {
   }));
 }
 
-export default function ProjectPage({ params }: { params: { id: string } }) {
-  const project = projects.find(p => p.id === params.id);
+export default async function Page({ params }: { params: Params }) {
+  const { id } = await params;
+  const project = projects.find(p => p.id === id);
 
-  // If project not found, return 404
+  // If a project not found, return 404
   if (!project) {
     notFound();
   }
 
   // Find next and previous projects for navigation
-  const currentIndex = projects.findIndex(p => p.id === params.id);
+  const currentIndex = projects.findIndex(p => p.id === id);
   const prevProject = currentIndex > 0 ? projects[currentIndex - 1] : null;
   const nextProject =
     currentIndex < projects.length - 1 ? projects[currentIndex + 1] : null;
@@ -75,7 +82,9 @@ export default function ProjectPage({ params }: { params: { id: string } }) {
             />
           ) : (
             <div className="h-[350px] bg-gray-200 dark:bg-gray-800 flex items-center justify-center rounded-lg shadow-xl">
-              <span className="text-gray-500 dark:text-gray-400">No image available</span>
+              <span className="text-gray-500 dark:text-gray-400">
+                No image available
+              </span>
             </div>
           )}
           <div className=" flex flex-col justify-between">
