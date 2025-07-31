@@ -4,7 +4,9 @@ import Image from 'next/image';
 import Link from 'next/link';
 import TechItem from '@/app/components/projects/TechItem';
 import { Metadata } from 'next';
+
 type Params = Promise<{ id: string }>;
+
 // Generate metadata for each project page
 export async function generateMetadata({
   params,
