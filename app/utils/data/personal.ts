@@ -19,7 +19,7 @@ export interface PersonalInfo {
 }
 
 export const personalInfo: PersonalInfo = {
-  name: 'George Dinu',
+  name: 'George-Eduard Dinu',
   title: 'Web Developer',
   location: 'Bucharest, Romania',
   phone: '+40750491212',
