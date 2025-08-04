@@ -48,7 +48,7 @@ export const projects: Project[] = [
     url: 'https://www.squadra.work/',
     company: 'Ganz Digital',
     period: '2022-2025',
-    role: 'one of the main developers',
+    role: 'Main developer',
     technologies: [
       'React',
       'React Native',
