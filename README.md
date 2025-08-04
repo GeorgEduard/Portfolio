@@ -6,9 +6,9 @@ A modern, responsive portfolio website built with Next.js, TypeScript, and Tailw
 
 - **Responsive Design**: Works seamlessly on mobile, tablet, and desktop devices
 - **Dark Mode Support**: Automatically adapts to user's system preferences
-- **Animated Components**: Smooth animations and transitions for better user experience
+- **Animated Components**: Smooth animations and transitions for a better user experience
 - **Dynamic Project Pages**: Individual pages for each project with detailed information
-- **SEO Friendly**: Optimized metadata for better search engine visibility
+- **SEO Friendly**: Optimised metadata for better search engine visibility
 - **Reusable Components**: Modular architecture for easy maintenance and updates
 
 ### Prerequisites
@@ -23,7 +23,6 @@ A modern, responsive portfolio website built with Next.js, TypeScript, and Tailw
 
 ```bash
 npm install
-
 
 3. Run the development server:
 

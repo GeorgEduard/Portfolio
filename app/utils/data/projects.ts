@@ -1,4 +1,5 @@
 import { StaticImageData } from 'next/image';
+import { ReactNode } from 'react';
 import riskCockpitOverview from '../../../public/projects/riskcockpit/overview.png';
 import squadraImage from '../../../public/projects/squadra/squadra.png';
 import caveoImage from '../../../public/projects/caveo/caveo.png';
@@ -21,6 +22,7 @@ export interface Project {
   role: string;
   technologies: string[];
   image?: StaticImageData;
+  extraInfo?: ReactNode;
   featured: boolean;
 }
 
@@ -46,7 +48,7 @@ export const projects: Project[] = [
     url: 'https://www.squadra.work/',
     company: 'Ganz Digital',
     period: '2022-2025',
-    role: 'Main Developer',
+    role: 'one of the main developers',
     technologies: [
       'React',
       'React Native',
@@ -66,7 +68,14 @@ export const projects: Project[] = [
     company: 'Ganz Digital',
     period: '2022-2025',
     role: 'Lead Developer',
-    technologies: ['React', 'React Native', 'TypeScript', 'Next.js', 'Node.js'],
+    technologies: [
+      'React',
+      'React Native',
+      'React Admin',
+      'TypeScript',
+      'Next.js',
+      'Node.js',
+    ],
     image: caveoImage,
     featured: true,
   },

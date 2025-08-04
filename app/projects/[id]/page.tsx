@@ -3,6 +3,7 @@ import { notFound } from 'next/navigation';
 import Image from 'next/image';
 import Link from 'next/link';
 import TechItem from '@/app/components/projects/TechItem';
+import ExtraInfoContent from '@/app/components/projects/ExtraInfoContent';
 import { Metadata } from 'next';
 
 type Params = Promise<{ id: string }>;
@@ -130,6 +131,9 @@ export default async function Page({ params }: { params: Params }) {
           <p className="text-gray-700 dark:text-gray-300 mb-6 leading-relaxed">
             {project.description}
           </p>
+          <div className="mb-6">
+            <ExtraInfoContent projectId={project.id} />
+          </div>
           <h2 className="text-2xl font-bold mb-4">My Role</h2>
           <p className="text-gray-700 dark:text-gray-300 mb-6 leading-relaxed">
             As the {project.role} for this project, I was responsible for
